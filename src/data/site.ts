@@ -30,7 +30,7 @@ export interface Office {
 export const offices: Office[] = [
   {
     city: 'Santa Cruz',
-    address: 'Oficina 4to Anillo doble vía La Guardia',
+    address: '8vo Anillo, doble vía La Guardia, Mercado 25 de Mayo',
     phone: '68921188',
     whatsapp: '59168921188',
     hours: '06:00 – 21:00',
