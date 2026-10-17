@@ -34,6 +34,7 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				'inter': ['Inter', 'system-ui', 'sans-serif'],
+				'display': ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
 			},
 			colors: {
 				// Colores regionales de Comarapa
@@ -45,6 +46,11 @@ module.exports = {
 					'white': '#FFFFFF',    // Blanco principal
 					'gray': '#E3F2FD',     // Gris claro para backgrounds
 
+				},
+				ink: '#0A1A3A',            // Azul marino profundo para textos y fondos oscuros
+				whatsapp: {
+					DEFAULT: '#16A34A',
+					dark: '#15803D',
 				},
 				// Compatibilidad con shadcn/ui
 				border: 'hsl(var(--border))',

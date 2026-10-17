@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -81,70 +81,43 @@
     @apply border-border;
   }
   
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
   body {
     @apply bg-background text-foreground font-inter;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-comarapa-medium ring-offset-2;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
 @layer components {
   /* Componentes personalizados para Trans Comarapa */
-  .comarapa-gradient {
-    background: linear-gradient(135deg, var(--comarapa-dark) 0%, var(--comarapa-medium) 50%, var(--comarapa-light) 100%);
-  }
-  
-  .comarapa-card {
-    @apply bg-white rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:shadow-comarapa-light/20;
-  }
-  
-  .comarapa-button-primary {
-    @apply bg-comarapa-dark text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold transition-all duration-300 hover:bg-comarapa-medium hover:shadow-lg transform hover:-translate-y-1 text-sm sm:text-base;
-  }
-  
-  .comarapa-button-secondary {
-    @apply bg-white text-comarapa-dark border-2 border-comarapa-dark px-6 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold transition-all duration-300 hover:bg-comarapa-dark hover:text-white hover:shadow-lg transform hover:-translate-y-1 text-sm sm:text-base;
+  .section {
+    @apply py-10 sm:py-12 lg:py-14;
   }
 
-  /* Responsive utilities específicas para Trans Comarapa */
-  .touch-safe {
-    @apply touch-manipulation;
-    min-width: 44px;
-    min-height: 44px;
+  .card {
+    @apply rounded-2xl border border-slate-200 bg-white shadow-sm transition-shadow duration-300 hover:shadow-lg hover:shadow-comarapa-dark/5;
   }
+}
 
-  .responsive-text-hero {
-    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
-  }
-
-  .responsive-text-title {
-    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
-  }
-
-  .responsive-text-subtitle {
-    @apply text-base sm:text-lg md:text-xl;
-  }
-
-  .responsive-text-body {
-    @apply text-sm sm:text-base;
-  }
-
-  .responsive-spacing-section {
-    @apply py-12 sm:py-16 md:py-20 lg:py-24;
-  }
-
-  .responsive-spacing-element {
-    @apply mb-6 sm:mb-8 md:mb-12;
-  }
-
-  .responsive-container {
-    @apply px-4 sm:px-6 lg:px-8;
-  }
-
-  .responsive-grid-auto {
-    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8;
-  }
-
-  .responsive-flex-stack {
-    @apply flex flex-col sm:flex-row gap-3 sm:gap-4;
-  }
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
 }
 
